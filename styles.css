@@ -32,8 +32,11 @@ body {
 
 body {
   font-family: "DM Sans", "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: linear-gradient(180deg, #ffffff 0%, #f8faff 50%, #f0f7ff 100%);
+  background: radial-gradient(circle at top left, #e0f2fe 0, transparent 55%),
+    radial-gradient(circle at top right, #ddd6fe 0, transparent 55%),
+    linear-gradient(180deg, #ffffff 0%, #f9fbff 45%, #eef2ff 100%);
   color: var(--text);
+  line-height: 1.5;
 }
 
 /* Animaciones suaves al hacer scroll */
@@ -346,7 +349,9 @@ button {
 }
 
 .hero {
-  padding: 32px 0 64px;
+  padding: 40px 0 80px;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-inner {
@@ -354,6 +359,32 @@ button {
   grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.1fr);
   gap: 34px;
   align-items: center;
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.hero::before {
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.21), transparent 60%);
+  top: -80px;
+  right: -120px;
+}
+
+.hero::after {
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.18), transparent 60%);
+  bottom: -120px;
+  left: -60px;
 }
 
 .hero-badge {
@@ -638,11 +669,13 @@ button {
 }
 
 .section {
-  padding: 52px 0;
+  padding: 72px 0;
 }
 
 .section-alt {
-  background: var(--bg-soft);
+  background: radial-gradient(circle at top left, rgba(191, 219, 254, 0.6), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(221, 214, 254, 0.6), transparent 55%),
+    #f1f5f9;
 }
 
 .section-accent {
@@ -689,7 +722,8 @@ button {
 /* Carrusel - Así funciona */
 .carousel {
   position: relative;
-  max-width: 520px;
+  max-width: 900px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -714,11 +748,13 @@ button {
   border-radius: 24px;
   overflow: hidden;
   border: 1px solid rgba(37, 99, 235, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    filter 0.4s ease, opacity 0.4s ease;
 }
 
 .carousel-image {
   position: relative;
-  height: 220px;
+  height: 260px;
   overflow: hidden;
 }
 
@@ -749,6 +785,7 @@ button {
   color: white;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
   letter-spacing: -0.03em;
+  z-index: 2;
 }
 
 .carousel-content {
@@ -767,6 +804,12 @@ button {
   font-size: 0.95rem;
   color: var(--text-soft);
   line-height: 1.6;
+  text-align: justify;
+}
+
+.carousel.is-transitioning .carousel-card {
+  filter: blur(6px);
+  opacity: 0.4;
 }
 
 .carousel-arrow {
@@ -844,20 +887,28 @@ button {
 .feature-card {
   padding: 18px 16px 16px;
   border-radius: var(--radius-lg);
-  background: white;
-  border: 1px solid rgba(37, 99, 235, 0.2);
-  box-shadow: var(--shadow-subtle);
+  background:
+    linear-gradient(135deg, #ffffff, #f9fbff) padding-box,
+    linear-gradient(135deg, rgba(37, 99, 235, 0.25), rgba(129, 140, 248, 0.35))
+      border-box;
+  border: 1px solid transparent;
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.12);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .feature-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.12);
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.16);
 }
 
 .feature-card h3 {
   margin: 0 0 6px;
   font-size: 0.98rem;
+}
+
+.feature-icon {
+  margin-right: 6px;
+  font-size: 1.1rem;
 }
 
 .feature-card p {
@@ -875,15 +926,18 @@ button {
 .route-card {
   padding: 18px 16px 16px;
   border-radius: var(--radius-lg);
-  background: white;
-  border: 1px solid rgba(37, 99, 235, 0.2);
-  box-shadow: var(--shadow-subtle);
+  background:
+    linear-gradient(135deg, #ffffff, #f8fafc) padding-box,
+    linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(59, 130, 246, 0.4))
+      border-box;
+  border: 1px solid transparent;
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.12);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .route-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.12);
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.16);
 }
 
 .route-card h3 {

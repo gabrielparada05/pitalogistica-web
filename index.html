@@ -34,11 +34,9 @@
             <div class="nav-left">
               <a href="#cotizar">Cotizar</a>
               <a href="#beneficios">Beneficios</a>
-              <a href="#rutas">Rutas</a>
             </div>
             <div class="nav-center">
               <a href="#como-funciona">Cómo funciona</a>
-              <a href="#faq">Preguntas frecuentes</a>
             </div>
             <div class="nav-right">
               <a href="#calculadora">Calculadora</a>
@@ -75,20 +73,11 @@
               confianza, claridad y soporte que tu negocio necesita.
             </p>
             <div class="hero-actions">
-              <a class="btn btn-primary btn-lg" href="#cotizar">
+              <a class="btn btn-primary btn-lg" href="#calculadora">
                 Cotizar envío
               </a>
               <a class="btn btn-ghost btn-lg" href="#como-funciona">
                 Ver cómo funciona
-              </a>
-            </div>
-            <div class="hero-quicklinks">
-              <a class="quicklink" href="https://www.pitacompra.com" target="_blank" rel="noopener noreferrer">
-                <img src="./assets/pita-express.png" alt="Pita Express" />
-                Pita Compra
-              </a>
-              <a class="quicklink" href="#" id="linkIntranetHero" target="_blank" rel="noopener noreferrer">
-                Intranet
               </a>
             </div>
             <div class="hero-trust">
@@ -127,7 +116,7 @@
                     <input id="whatsapp" type="tel" placeholder="+58 XXX XXX XXXX" />
                   </div>
                   <div class="form-field">
-                    <label for="origen">Origen (China)</label>
+                    <label for="origen">Ciudad de Origen en China</label>
                     <input id="origen" type="text" placeholder="Guangzhou, Yiwu, Shenzhen..." />
                   </div>
                 </div>
@@ -280,28 +269,28 @@
           </div>
           <div class="features-grid">
             <article class="feature-card">
-              <h3>Transparencia en costos</h3>
+              <h3><span class="feature-icon">💸</span>Transparencia en costos</h3>
               <p>
                 Te explicamos claramente qué estás pagando: flete, manejo,
                 nacionalización y cualquier costo extra antes de embarcar.
               </p>
             </article>
             <article class="feature-card">
-              <h3>Acompañamiento en compras</h3>
+              <h3><span class="feature-icon">🤝</span>Acompañamiento en compras</h3>
               <p>
                 Si lo necesitas, te ayudamos a validar proveedores, productos y
                 documentos básicos para minimizar riesgos.
               </p>
             </article>
             <article class="feature-card">
-              <h3>Rutas pensadas para Venezuela</h3>
+              <h3><span class="feature-icon">🗺️</span>Rutas pensadas para Venezuela</h3>
               <p>
                 Operamos rutas optimizadas para llegar a los principales estados
                 del país con tiempos competitivos.
               </p>
             </article>
             <article class="feature-card">
-              <h3>Soporte humano real</h3>
+              <h3><span class="feature-icon">💬</span>Soporte humano real</h3>
               <p>
                 Estamos disponibles por WhatsApp e Instagram para responder
                 dudas sobre tu carga en cada etapa del proceso.
@@ -346,15 +335,6 @@
             <p>Operamos rutas constantes entre China y Venezuela.</p>
           </div>
           <div class="routes-grid">
-            <div class="route-card">
-              <h3>China &rarr; Puerto Cabello</h3>
-              <p>Ruta marítima consolidada para carga comercial.</p>
-              <ul>
-                <li>Ideal para volúmenes medios y altos</li>
-                <li>ETA estimada: 18 - 30 días</li>
-                <li>Tarifas por kilo y por volumen</li>
-              </ul>
-            </div>
             <div class="route-card">
               <h3>China &rarr; Maiquetía</h3>
               <p>Ruta aérea para mercancía urgente y liviana.</p>
@@ -645,9 +625,9 @@
                 >@pitalogistica.internacional</a
               >
             </li>
-            <li>WhatsApp: reemplazar por tu número oficial</li>
-            <li>Correo: reemplazar por tu correo corporativo</li>
-            <li>Ubicación: Venezuela</li>
+            <li>WhatsApp: +58 424 449 4560</li>
+            <li>Correo: info@pitacompra.com</li>
+            <li>Ubicación: Valencia, Venezuela</li>
           </ul>
         </div>
         <div class="footer-links">
@@ -714,13 +694,23 @@
           var btnPrev = document.getElementById("carouselPrev");
           var btnNext = document.getElementById("carouselNext");
           var slides = document.querySelectorAll(".carousel-slide");
+          var carousel = document.querySelector(".how-it-works .carousel");
           var total = slides.length;
           var current = 0;
 
           function goTo(index) {
+            if (!track || !total) return;
+
+            if (carousel) {
+              carousel.classList.add("is-transitioning");
+              setTimeout(function () {
+                carousel.classList.remove("is-transitioning");
+              }, 400);
+            }
+
             current = ((index % total) + total) % total;
             var offset = -current * 100;
-            if (track) track.style.transform = "translateX(" + offset + "%)";
+            track.style.transform = "translateX(" + offset + "%)";
             dots.forEach(function (d, i) {
               d.classList.toggle("active", i === current);
             });
@@ -1008,6 +998,10 @@
             var volumenMostrado = Math.round(volumeM3 * 1000) / 1000;
             var densidadMostrada = Math.round(densidad);
 
+            var calcTipoEntrega = (document.querySelector('input[name="calcTipoEntrega"]:checked') || {}).value || "retira_almacen";
+            var calcEstado = (calcSelectEstado && calcSelectEstado.value) || null;
+            var calcCiudad = (calcSelectCiudad && calcSelectCiudad.value) || null;
+
             if (densidad > 400) {
               resultBox.innerHTML =
                 '<div class="result-main">' +
@@ -1028,7 +1022,7 @@
                 '  <span class="badge badge-warning">Carga especial &gt; 400 kg/m³</span>' +
                 "</div>" +
                 '<p class="result-note">Por seguridad, esta carga se considera especial. Por favor solicita una cotización personalizada a nuestro WhatsApp para revisar tu caso.</p>';
-              addWhatsAppButton(volumenMostrado, null, null, densidadMostrada, true, null, null, null);
+              addWhatsAppButton(volumenMostrado, null, null, densidadMostrada, true, calcTipoEntrega, calcEstado, calcCiudad, 0, true);
               return;
             }
 
@@ -1048,10 +1042,87 @@
 
             var total = volumenFacturable * tarifa;
 
+            // Recargos por entrega a domicilio según ciudad/estado
+            var deliverySurcharge = 0;
+            var hasUnknownDelivery = false;
+            var deliveryLabel = "";
+
+            if (calcTipoEntrega === "entrega_domicilio" && calcEstado && calcCiudad) {
+              var cityKey = String(calcCiudad).trim().toLowerCase();
+              var stateKey = String(calcEstado).trim().toLowerCase();
+
+              // Mapa de recargos específicos por ciudad
+              var CITY_SURCHARGES = {
+                "caracas": 65,
+                "maracaibo": 114.5,
+                "barcelona": 143,
+                "san cristóbal": 169,
+                "mérida": 169,
+                "tigree": 82, // fallback por si viene con doble e
+                "tigre": 82,
+                "san félix": 108,
+                "san felix": 108,
+                "bolívar": 108,
+                "bolivar": 108,
+                "maturín": 82,
+                "maturin": 82,
+                "puerto la cruz": 69,
+                "puerto la cruz (anzoátegui)": 69,
+                "cumaná": 82,
+                "cumana": 82,
+                "anaco": 82,
+                "carúpano": 108,
+                "carupano": 108,
+                "caripito": 108,
+                "temblador": 108,
+                "pariaguán": 108,
+                "pariaguan": 108,
+                "caripe": 154,
+                "upata": 154,
+                "güiria": 186,
+                "guiria": 186,
+                "tucupita": 186,
+                "guasipati": 186,
+                "callao": 199,
+                "tumeremo": 199,
+                "caicara del orinoco": 199
+              };
+
+              // Mapa de recargos por estado (aplica si no hay recargo específico de ciudad)
+              var STATE_SURCHARGES = {
+                "carabobo": 32.5,
+                "lara": 39,
+                "portuguesa": 52,
+                "aragua": 52,
+                "miranda": 52,
+                "cojedes": 52,
+                "yaracuy": 52,
+                "falcón": 114.5,
+                "falcon": 114.5,
+                "trujillo": 114.5,
+                "apure": 169,
+                "guárico": 169,
+                "guarico": 169,
+                "barinas": 223
+              };
+
+              if (Object.prototype.hasOwnProperty.call(CITY_SURCHARGES, cityKey)) {
+                deliverySurcharge = CITY_SURCHARGES[cityKey];
+                deliveryLabel = calcCiudad;
+              } else if (Object.prototype.hasOwnProperty.call(STATE_SURCHARGES, stateKey)) {
+                deliverySurcharge = STATE_SURCHARGES[stateKey];
+                deliveryLabel = "cualquier ciudad de " + calcEstado;
+              } else {
+                hasUnknownDelivery = true;
+              }
+            }
+
+            var totalConDomicilio = total + deliverySurcharge;
+
             var volLabel = volumeM3 < 0.1
               ? "Volumen (mín. facturable 0,10 m³)"
               : "Volumen estimado";
-            resultBox.innerHTML =
+            var html =
               '<div class="result-main">' +
               '  <div>' +
               '    <div class="result-label">' + volLabel + '</div>' +
@@ -1066,32 +1137,81 @@
               "</div>" +
               "  </div>" +
               '  <div>' +
-              '    <div class="result-label">Costo estimado</div>' +
+              '    <div class="result-label">Costo estimado base</div>' +
               '    <div class="result-value result-value-accent">$ ' +
               formatNumber(total, 2) +
               "</div>" +
-              "  </div>" +
-              "</div>" +
+              "  </div>";
+
+            if (calcTipoEntrega === "entrega_domicilio") {
+              html +=
+                '  <div>' +
+                '    <div class="result-label">Entrega a domicilio</div>' +
+                '    <div class="result-value">' +
+                (hasUnknownDelivery
+                  ? "Consultar con asesor"
+                  : "$ " + formatNumber(deliverySurcharge, 2) + " extra") +
+                "</div>" +
+                "  </div>";
+            }
+
+            html += "</div>";
+
+            html +=
               '<div class="result-secondary">' +
               '  <span class="badge">Rango de tarifa: ' +
               rangoTexto +
               "</span>" +
               '  <span class="badge">Densidad: ' +
               formatNumber(densidadMostrada, 0) +
-              " kg/m³</span>" +
-              "</div>" +
-              '<p class="result-note">' +
+              " kg/m³</span>";
+
+            if (calcTipoEntrega === "entrega_domicilio" && !hasUnknownDelivery) {
+              html +=
+                '  <span class="badge">Total con domicilio: $ ' +
+                formatNumber(totalConDomicilio, 2) +
+                "</span>";
+            }
+
+            html += "</div>";
+
+            var notaBase =
               (volumeM3 < 0.1
                 ? "Se aplicó el volumen mínimo facturable (0,10 m³). "
                 : "") +
-              "Este cálculo es solo referencial. El monto final se confirma una vez recibida y verificada la carga en nuestro almacén.</p>";
-            var calcTipoEntrega = (document.querySelector('input[name="calcTipoEntrega"]:checked') || {}).value || "retira_almacen";
-            var calcEstado = (calcSelectEstado && calcSelectEstado.value) || null;
-            var calcCiudad = (calcSelectCiudad && calcSelectCiudad.value) || null;
-            addWhatsAppButton(volumenMostrado, total, tarifa, densidadMostrada, false, calcTipoEntrega, calcEstado, calcCiudad);
+              "Este cálculo es solo referencial. El monto final se confirma una vez recibida y verificada la carga en nuestro almacén.";
+
+            if (calcTipoEntrega === "entrega_domicilio") {
+              if (hasUnknownDelivery) {
+                notaBase +=
+                  " Para esta ciudad no tenemos tarifa automática de entrega a domicilio. Por favor contáctanos para confirmar el costo de despacho.";
+              } else if (deliverySurcharge > 0) {
+                notaBase +=
+                  " Se incluyó el recargo de entrega a domicilio para " +
+                  (deliveryLabel || "tu ciudad") +
+                  ".";
+              }
+            }
+
+            html += '<p class="result-note">' + notaBase + "</p>";
+
+            resultBox.innerHTML = html;
+
+            addWhatsAppButton(
+              volumenMostrado,
+              total,
+              tarifa,
+              densidadMostrada,
+              false,
+              calcTipoEntrega,
+              calcEstado,
+              calcCiudad,
+              deliverySurcharge,
+              hasUnknownDelivery
+            );
           }
 
-        function addWhatsAppButton(vol, total, tarifa, dens, esEspecial, tipoEntrega, estado, ciudad) {
+        function addWhatsAppButton(vol, total, tarifa, dens, esEspecial, tipoEntrega, estado, ciudad, deliverySurcharge, hasUnknownDelivery) {
           var existente = document.getElementById("btnCalcWhatsApp");
           if (existente) existente.remove();
           if (!calcActions) return;
@@ -1102,7 +1222,15 @@
             msg += "• Densidad: " + dens + " kg/m³ (carga especial)\n";
           } else {
             msg += "• Tarifa aplicable: $" + formatNumber(tarifa, 0) + "/m³\n";
-            msg += "• Costo estimado: $" + formatNumber(total, 2) + "\n";
+            msg += "• Costo estimado base: $" + formatNumber(total, 2) + "\n";
+            if (tipoEntrega === "entrega_domicilio") {
+              if (hasUnknownDelivery) {
+                msg += "• Entrega a domicilio: tarifa a confirmar según ciudad\n";
+              } else {
+                msg += "• Recargo entrega a domicilio: $" + formatNumber(deliverySurcharge || 0, 2) + "\n";
+                msg += "• Total estimado con domicilio: $" + formatNumber((total || 0) + (deliverySurcharge || 0), 2) + "\n";
+              }
+            }
           }
           var tipo = tipoEntrega || "retira_almacen";
           msg += "• Entrega: " + (tipo === "entrega_domicilio" ? "A domicilio" : "Retira en Almacén Valencia") + "\n";
