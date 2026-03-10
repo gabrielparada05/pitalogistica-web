@@ -30,15 +30,21 @@
           <span></span>
         </button>
         <div class="header-nav-wrapper" id="headerNavWrapper">
-          <nav class="nav">
-            <a href="#cotizar">Cotizar</a>
-            <a href="#como-funciona">Cómo funciona</a>
-            <a href="#beneficios">Beneficios</a>
-            <a href="#rutas">Rutas</a>
-            <a href="#calculadora">Calculadora</a>
-            <a href="#testimonios">Experiencias</a>
-            <a href="#faq">Preguntas frecuentes</a>
-            <a href="#contacto">Contacto</a>
+          <nav class="nav nav-split">
+            <div class="nav-left">
+              <a href="#cotizar">Cotizar</a>
+              <a href="#beneficios">Beneficios</a>
+              <a href="#rutas">Rutas</a>
+            </div>
+            <div class="nav-center">
+              <a href="#como-funciona">Cómo funciona</a>
+              <a href="#faq">Preguntas frecuentes</a>
+            </div>
+            <div class="nav-right">
+              <a href="#calculadora">Calculadora</a>
+              <a href="#testimonios">Experiencias</a>
+              <a href="#contacto">Contacto</a>
+            </div>
           </nav>
           <div class="header-actions">
             <a class="btn btn-link-pita" href="https://www.pitacompra.com" target="_blank" rel="noopener noreferrer" title="Pita Compra">
@@ -182,72 +188,81 @@
         </div>
       </section>
 
-      <!-- COMO FUNCIONA -->
+      <!-- COMO FUNCIONA - Carrusel moderno -->
       <section id="como-funciona" class="section how-it-works">
         <div class="container">
           <div class="section-header">
             <h2>Así funciona Pita Logística</h2>
             <p>Un flujo claro y transparente para tu importación.</p>
           </div>
-          <div class="flow-container">
-            <div class="flow-line" aria-hidden="true"></div>
-            <div class="flow-step">
-              <div class="flow-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                  <line x1="12" y1="22.08" x2="12" y2="12"/>
-                </svg>
-              </div>
-              <div class="flow-content">
-                <span class="flow-num">01</span>
-                <h3>Recibimos tu compra en China</h3>
-                <p>Te asignamos una dirección de almacén. Tu proveedor envía allí y confirmamos recepción con fotos y conteo.</p>
+          <div class="carousel">
+            <div class="carousel-viewport">
+              <div class="carousel-track" id="carouselTrack">
+                <div class="carousel-slide">
+                  <div class="carousel-card">
+                    <div class="carousel-image">
+                      <img src="https://images.pexels.com/photos/4483610/pexels-photo-4483610.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Almacén en China" loading="lazy" />
+                      <div class="carousel-overlay"></div>
+                      <span class="carousel-badge">01</span>
+                    </div>
+                    <div class="carousel-content">
+                      <h3>Recibimos tu compra en China</h3>
+                      <p>Te asignamos una dirección de almacén. Tu proveedor envía allí y confirmamos recepción con fotos y conteo en menos de 48 horas.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-slide">
+                  <div class="carousel-card">
+                    <div class="carousel-image">
+                      <img src="https://images.pexels.com/photos/4483617/pexels-photo-4483617.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Consolidación" loading="lazy" />
+                      <div class="carousel-overlay"></div>
+                      <span class="carousel-badge">02</span>
+                    </div>
+                    <div class="carousel-content">
+                      <h3>Consolidamos y verificamos</h3>
+                      <p>Verificamos medidas, peso y tipo de mercancía. Agrupamos tus cajas para optimizar espacio y reducir costos de envío.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-slide">
+                  <div class="carousel-card">
+                    <div class="carousel-image">
+                      <img src="https://images.pexels.com/photos/4484078/pexels-photo-4484078.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Envío internacional" loading="lazy" />
+                      <div class="carousel-overlay"></div>
+                      <span class="carousel-badge">03</span>
+                    </div>
+                    <div class="carousel-content">
+                      <h3>Envío marítimo o aéreo</h3>
+                      <p>Elegimos la ruta ideal según tu urgencia y presupuesto. Manejo aduanal y seguimiento en tiempo real hasta Venezuela.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-slide">
+                  <div class="carousel-card">
+                    <div class="carousel-image">
+                      <img src="https://images.pexels.com/photos/6995133/pexels-photo-6995133.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Entrega" loading="lazy" />
+                      <div class="carousel-overlay"></div>
+                      <span class="carousel-badge">04</span>
+                    </div>
+                    <div class="carousel-content">
+                      <h3>Entrega en Venezuela</h3>
+                      <p>Retiras en Almacén Valencia o te lo llevamos a domicilio. Soporte por WhatsApp e Instagram en todo el proceso.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="flow-step">
-              <div class="flow-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                  <polyline points="14 2 14 8 20 8"/>
-                  <line x1="16" y1="13" x2="8" y2="13"/>
-                  <line x1="16" y1="17" x2="8" y2="17"/>
-                  <polyline points="10 9 9 9 8 9"/>
-                </svg>
-              </div>
-              <div class="flow-content">
-                <span class="flow-num">02</span>
-                <h3>Consolidamos y verificamos</h3>
-                <p>Verificamos medidas, peso y tipo. Agrupamos tus cajas para optimizar espacio y costo.</p>
-              </div>
-            </div>
-            <div class="flow-step">
-              <div class="flow-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="1" y="3" width="15" height="13"/>
-                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
-                  <circle cx="5.5" cy="18.5" r="2.5"/>
-                  <circle cx="18.5" cy="18.5" r="2.5"/>
-                </svg>
-              </div>
-              <div class="flow-content">
-                <span class="flow-num">03</span>
-                <h3>Envío marítimo o aéreo</h3>
-                <p>Elegimos la ruta ideal. Manejo aduanal y seguimiento hasta Venezuela.</p>
-              </div>
-            </div>
-            <div class="flow-step">
-              <div class="flow-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                  <polyline points="22 4 12 14.01 9 11.01"/>
-                </svg>
-              </div>
-              <div class="flow-content">
-                <span class="flow-num">04</span>
-                <h3>Entrega en Venezuela</h3>
-                <p>Retiras en nuestras oficinas o coordinamos envío interno. Soporte en todo el proceso.</p>
-              </div>
+            <button type="button" class="carousel-arrow carousel-prev" id="carouselPrev" aria-label="Anterior">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button type="button" class="carousel-arrow carousel-next" id="carouselNext" aria-label="Siguiente">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+            <div class="carousel-dots" id="carouselDots">
+              <button type="button" class="carousel-dot active" data-index="0" aria-label="Slide 1"></button>
+              <button type="button" class="carousel-dot" data-index="1" aria-label="Slide 2"></button>
+              <button type="button" class="carousel-dot" data-index="2" aria-label="Slide 3"></button>
+              <button type="button" class="carousel-dot" data-index="3" aria-label="Slide 4"></button>
             </div>
           </div>
         </div>
@@ -691,6 +706,34 @@
             window.scrollTo({ top: 0, behavior: "smooth" });
           });
         }
+
+        /* Carrusel - Así funciona */
+        (function () {
+          var track = document.getElementById("carouselTrack");
+          var dots = document.querySelectorAll(".carousel-dot");
+          var btnPrev = document.getElementById("carouselPrev");
+          var btnNext = document.getElementById("carouselNext");
+          var slides = document.querySelectorAll(".carousel-slide");
+          var total = slides.length;
+          var current = 0;
+
+          function goTo(index) {
+            current = ((index % total) + total) % total;
+            var offset = -current * 100;
+            if (track) track.style.transform = "translateX(" + offset + "%)";
+            dots.forEach(function (d, i) {
+              d.classList.toggle("active", i === current);
+            });
+          }
+
+          if (btnPrev) btnPrev.addEventListener("click", function () { goTo(current - 1); });
+          if (btnNext) btnNext.addEventListener("click", function () { goTo(current + 1); });
+          dots.forEach(function (dot) {
+            dot.addEventListener("click", function () {
+              goTo(parseInt(dot.getAttribute("data-index"), 10));
+            });
+          });
+        })();
 
         /* Formulario de cotización → Supabase (sin correo), popup de éxito */
         (function () {
