@@ -1,27 +1,141 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-VE">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pita Logística Internacional | Envíos desde China a Venezuela</title>
+    <title>Importaciones China a Venezuela | Pita Logística Internacional</title>
     <meta
       name="description"
-      content="Pita Logística Internacional: tu aliado para traer compras desde China a Venezuela de forma segura, rápida y transparente."
+      content="Envíos marítimos y cotización aérea desde China a Venezuela. Casillero, almacén en Valencia, entrega a domicilio, calculadora de volumen y asesoría. Transparencia y seguimiento en cada etapa."
     />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="Pita Logística Internacional" />
+    <meta name="theme-color" content="#1d4ed8" />
+    <link rel="canonical" href="https://pitalogistica.com/" />
+    <link rel="alternate" hreflang="es-ve" href="https://pitalogistica.com/" />
+    <link rel="alternate" hreflang="es" href="https://pitalogistica.com/" />
+    <link rel="alternate" hreflang="x-default" href="https://pitalogistica.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_VE" />
+    <meta property="og:site_name" content="Pita Logística Internacional" />
+    <meta property="og:url" content="https://pitalogistica.com/" />
+    <meta property="og:title" content="Importaciones China a Venezuela | Pita Logística Internacional" />
+    <meta
+      property="og:description"
+      content="Envíos marítimos y cotización aérea desde China a Venezuela. Almacén Valencia, entrega a domicilio y calculadora de costos. Cotiza en línea."
+    />
+    <meta property="og:image" content="https://pitalogistica.com/assets/logo.png" />
+    <meta property="og:image:alt" content="Pita Logística Internacional — logotipo" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Importaciones China a Venezuela | Pita Logística Internacional" />
+    <meta
+      name="twitter:description"
+      content="Envíos marítimos y cotización aérea China → Venezuela. Valencia, tracking y soporte humano."
+    />
+    <meta name="twitter:image" content="https://pitalogistica.com/assets/logo.png" />
+    <link rel="icon" href="./assets/logo.png" type="image/png" />
+    <link rel="apple-touch-icon" href="./assets/logo.png" />
     <link rel="stylesheet" href="./styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://images.pexels.com" />
+    <link rel="dns-prefetch" href="https://flagcdn.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="./venezuela-locations.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://pitalogistica.com/#website",
+            "url": "https://pitalogistica.com/",
+            "name": "Pita Logística Internacional",
+            "description": "Logística y envíos consolidados desde China hacia Venezuela: marítimo, cotización aérea, almacén en Valencia y distribución.",
+            "inLanguage": "es-VE",
+            "publisher": { "@id": "https://pitalogistica.com/#organization" }
+          },
+          {
+            "@type": ["Organization", "LocalBusiness"],
+            "@id": "https://pitalogistica.com/#organization",
+            "name": "Pita Logística Internacional",
+            "url": "https://pitalogistica.com/",
+            "logo": "https://pitalogistica.com/assets/logo.png",
+            "image": "https://pitalogistica.com/assets/logo.png",
+            "description": "Empresa de logística internacional especializada en importaciones desde China a Venezuela, con almacén en Valencia y entrega nacional.",
+            "email": "info@pitacompra.com",
+            "telephone": "+58-424-449-4560",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Valencia",
+              "addressRegion": "Carabobo",
+              "addressCountry": "VE"
+            },
+            "areaServed": { "@type": "Country", "name": "Venezuela" },
+            "sameAs": [
+              "https://www.instagram.com/pitalogistica.internacional/",
+              "https://www.pitacompra.com"
+            ]
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://pitalogistica.com/#webpage",
+            "url": "https://pitalogistica.com/",
+            "name": "Importaciones China a Venezuela | Pita Logística Internacional",
+            "isPartOf": { "@id": "https://pitalogistica.com/#website" },
+            "about": { "@id": "https://pitalogistica.com/#organization" },
+            "description": "Cotización de envíos marítimos y aéreos, calculadora de volumen, asesoría y formulario de contacto para importar desde China."
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "¿Qué puedo traer desde China?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Trabajamos con mercancía comercial general. Algunos productos especiales (alimentos, químicos, marcas registradas) requieren permisos adicionales que revisamos caso por caso."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cuánto tiempo tarda mi carga en llegar?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Depende de la ruta y temporada. De forma general, los envíos marítimos toman entre 18 y 30 días y los aéreos entre 7 y 12 días una vez consolidada la carga."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cómo se calcula el costo del envío?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Consideramos peso real, peso volumétrico, tipo de mercancía y ruta seleccionada. Siempre te compartimos un estimado antes de embarcar y te explicamos cada concepto."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Puedo pagar en dólares o en bolívares?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí. Aceptamos diferentes métodos de pago adaptados al mercado venezolano. Cuando te coticemos te indicamos las opciones disponibles al momento."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
+    <a class="skip-link" href="#cotizar">Saltar al contenido principal</a>
     <header class="site-header">
       <div class="container header-inner">
-        <a href="#" class="logo" aria-label="Pita Logística Internacional">
+        <a href="./" class="logo" aria-label="Pita Logística Internacional — inicio">
           <img src="./assets/logo.png" alt="Pita Logística Internacional" class="logo-img" />
         </a>
         <button type="button" class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
@@ -30,7 +144,7 @@
           <span></span>
         </button>
         <div class="header-nav-wrapper" id="headerNavWrapper">
-          <nav class="nav nav-links">
+          <nav class="nav nav-links" aria-label="Navegación principal">
             <a href="#cotizar">Cotizar</a>
             <a href="#agendar-reunion">Asesoría</a>
             <a href="#calculadora">Calculadora marítima</a>
@@ -79,9 +193,9 @@
             <h1>
               Tu puente seguro
               <span class="hero-route-flags">
-                <img src="https://flagcdn.com/w80/cn.png" alt="" class="hero-flag" width="32" height="24" />
+                <img src="https://flagcdn.com/w80/cn.png" alt="China" class="hero-flag" width="32" height="24" decoding="async" />
                 <span class="accent">China &rarr; Venezuela</span>
-                <img src="https://flagcdn.com/w80/ve.png" alt="" class="hero-flag" width="32" height="24" />
+                <img src="https://flagcdn.com/w80/ve.png" alt="Venezuela" class="hero-flag" width="32" height="24" decoding="async" />
               </span>
             </h1>
             <p class="hero-subtitle">
@@ -257,10 +371,13 @@
             <p class="calculator-intro">📦 Esta calculadora aplica únicamente para envíos marítimos. La tarifa por metro cúbico mejora a medida que aumenta tu volumen consolidado:</p>
             <div class="tariff-table-wrapper">
               <table class="tariff-table">
+                <caption class="visually-hidden">
+                  Tarifas orientativas por metro cúbico para envíos marítimos consolidados desde China
+                </caption>
                 <thead>
                   <tr>
-                    <th>Volumen (m³)</th>
-                    <th>Tarifa por m³ desde</th>
+                    <th scope="col">Volumen (m³)</th>
+                    <th scope="col">Tarifa por m³ desde</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -545,7 +662,7 @@
                 <div class="carousel-slide">
                   <div class="carousel-card">
                     <div class="carousel-image">
-                      <img src="https://images.pexels.com/photos/6169668/pexels-photo-6169668.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Recepcionamos tu compra en almacén" loading="lazy" />
+                      <img src="https://images.pexels.com/photos/6169668/pexels-photo-6169668.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Recibimos tu compra en almacén en China" loading="lazy" width="800" height="533" />
                       <div class="carousel-overlay"></div>
                       <span class="carousel-badge">01</span>
                     </div>
@@ -558,7 +675,7 @@
                 <div class="carousel-slide">
                   <div class="carousel-card">
                     <div class="carousel-image">
-                      <img src="https://images.pexels.com/photos/4568698/pexels-photo-4568698.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Consolidamos cajas y verificamos" loading="lazy" />
+                      <img src="https://images.pexels.com/photos/4568698/pexels-photo-4568698.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Consolidación y verificación de cajas para envío internacional" loading="lazy" width="800" height="533" />
                       <div class="carousel-overlay"></div>
                       <span class="carousel-badge">02</span>
                     </div>
@@ -571,7 +688,7 @@
                 <div class="carousel-slide">
                   <div class="carousel-card">
                     <div class="carousel-image">
-                      <img src="https://images.pexels.com/photos/3075996/pexels-photo-3075996.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Envío marítimo internacional" loading="lazy" />
+                      <img src="https://images.pexels.com/photos/3075996/pexels-photo-3075996.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Contenedores y envío marítimo internacional" loading="lazy" width="800" height="533" />
                       <div class="carousel-overlay"></div>
                       <span class="carousel-badge">03</span>
                     </div>
@@ -584,7 +701,7 @@
                 <div class="carousel-slide">
                   <div class="carousel-card">
                     <div class="carousel-image">
-                      <img src="https://images.pexels.com/photos/6995133/pexels-photo-6995133.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Entrega a domicilio" loading="lazy" />
+                      <img src="https://images.pexels.com/photos/6995133/pexels-photo-6995133.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Entrega de paquetes y mercancía a domicilio en Venezuela" loading="lazy" width="800" height="533" />
                       <div class="carousel-overlay"></div>
                       <span class="carousel-badge">04</span>
                     </div>
@@ -656,10 +773,10 @@
       </section>
 
       <!-- VISIBILIDAD -->
-      <section class="section media-section">
+      <section id="visibilidad" class="section media-section" aria-labelledby="heading-visibilidad">
         <div class="container media-inner">
           <div class="media-text">
-            <h2>Visibilidad y control de tu carga</h2>
+            <h2 id="heading-visibilidad">Visibilidad y control de tu carga</h2>
             <p>
               Al estilo de plataformas líderes como Flexport, te mantenemos
               informado del estado de tus embarques en cada etapa: desde que tu
@@ -675,8 +792,11 @@
           <div class="media-image">
             <img
               src="https://images.pexels.com/photos/4484078/pexels-photo-4484078.jpeg?auto=compress&cs=tinysrgb&w=1200"
-              alt="Equipo de logística monitoreando envíos en pantallas"
+              alt="Equipo de logística monitoreando el estado de envíos internacionales en pantallas"
               loading="lazy"
+              width="1200"
+              height="800"
+              decoding="async"
             />
           </div>
         </div>
@@ -690,7 +810,7 @@
             <p>Operamos rutas constantes entre China y Venezuela.</p>
           </div>
           <div class="routes-grid">
-            <div class="route-card">
+            <article class="route-card">
               <h3>✈️ Envíos aéreos (Proximamente) </h3>
               <p>Ruta aérea para mercancía urgente y liviana. China → Maiquetía.</p>
               <ul>
@@ -698,8 +818,8 @@
                 <li>⏱️ ETA estimada: 15 - 28 días</li>
                 <li>💻 Ideal para muestras y artículos pequeños</li>
               </ul>
-            </div>
-            <div class="route-card">
+            </article>
+            <article class="route-card">
               <h3>🚢 Envíos marítimos</h3>
               <p>Ruta marítima consolidada para carga comercial. China → Venezuela.</p>
               <ul>
@@ -707,8 +827,8 @@
                 <li>⏱️ ETA estimada: 70 - 90 días</li>
                 <li>💰 Tarifas por volumen</li>
               </ul>
-            </div>
-            <div class="route-card">
+            </article>
+            <article class="route-card">
               <h3>🚚 Distribución nacional</h3>
               <p>Desde nuestros puntos principales hacia tu ciudad.</p>
               <ul>
@@ -716,7 +836,7 @@
                 <li>🏤 Entrega en agencias aliadas</li>
                 <li>👩‍💼 Soporte con seguimiento</li>
               </ul>
-            </div>
+            </article>
           </div>
         </div>
       </section>
@@ -767,15 +887,15 @@
       </section>
 
       <!-- FAQ -->
-      <section id="faq" class="section">
+      <section id="faq" class="section" aria-labelledby="heading-faq">
         <div class="container">
           <div class="section-header">
-            <h2>Preguntas frecuentes</h2>
+            <h2 id="heading-faq">Preguntas frecuentes</h2>
             <p>Resolvemos las dudas más comunes antes de tu primer envío.</p>
           </div>
           <div class="faq-grid">
             <div class="faq-item">
-              <h3>¿Qué puedo traer desde China?</h3>
+              <h3 id="faq-mercancia">¿Qué puedo traer desde China?</h3>
               <p>
                 Trabajamos con mercancía comercial general. Algunos productos
                 especiales (alimentos, químicos, marcas registradas) requieren
@@ -783,7 +903,7 @@
               </p>
             </div>
             <div class="faq-item">
-              <h3>¿Cuánto tiempo tarda mi carga en llegar?</h3>
+              <h3 id="faq-tiempos">¿Cuánto tiempo tarda mi carga en llegar?</h3>
               <p>
                 Depende de la ruta y temporada. De forma general, los envíos
                 marítimos toman entre 18 y 30 días y los aéreos entre 7 y 12
@@ -791,7 +911,7 @@
               </p>
             </div>
             <div class="faq-item">
-              <h3>¿Cómo se calcula el costo del envío?</h3>
+              <h3 id="faq-costo">¿Cómo se calcula el costo del envío?</h3>
               <p>
                 Consideramos peso real, peso volumétrico, tipo de mercancía y
                 ruta seleccionada. Siempre te compartimos un estimado antes de
@@ -799,7 +919,7 @@
               </p>
             </div>
             <div class="faq-item">
-              <h3>¿Puedo pagar en dólares o en bolívares?</h3>
+              <h3 id="faq-pago">¿Puedo pagar en dólares o en bolívares?</h3>
               <p>
                 Sí. Aceptamos diferentes métodos de pago adaptados al mercado
                 venezolano. Cuando te coticemos te indicamos las opciones
@@ -853,7 +973,7 @@
     <footer id="contacto" class="site-footer">
       <div class="container footer-inner">
         <div class="footer-brand">
-          <a href="#" class="logo logo-footer">
+          <a href="./" class="logo logo-footer" aria-label="Pita Logística Internacional — inicio">
             <img src="./assets/logo.png" alt="Pita Logística Internacional" class="logo-img" />
           </a>
           <p>
@@ -882,7 +1002,7 @@
             <li>Ubicación: Valencia, Venezuela</li>
           </ul>
         </div>
-        <div class="footer-links">
+        <nav class="footer-links" aria-label="Enlaces del sitio">
           <h4>Enlaces</h4>
           <ul>
             <li><a href="#cotizar">Cotizar</a></li>
@@ -898,7 +1018,7 @@
               <a href="https://tidycal.com/pitalogisticainternacional" target="_blank" rel="noopener noreferrer">Agendar asesoría</a>
             </li>
           </ul>
-        </div>
+        </nav>
       </div>
       <script>
         document.getElementById("year").textContent =
